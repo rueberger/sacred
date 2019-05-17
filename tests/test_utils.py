@@ -67,7 +67,7 @@ def test_iter_path_splits():
 
 def test_iter_prefixes():
     assert list(iter_prefixes('foo.bar.baz')) == \
-        ['foo', 'foo.bar', 'foo.bar.baz']
+        ['_config', 'foo', 'foo.bar', 'foo.bar.baz']
 
 
 def test_join_paths():

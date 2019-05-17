@@ -439,8 +439,9 @@ def iter_prefixes(path):
 
     Example:
     >>> list(iter_prefixes('foo.bar.baz'))
-    ['foo', 'foo.bar', 'foo.bar.baz']
+    ['_config', foo', 'foo.bar', 'foo.bar.baz']
     """
+    yield '_config'
     split_path = path.split('.')
     for i in range(1, len(split_path) + 1):
         yield join_paths(*split_path[:i])
