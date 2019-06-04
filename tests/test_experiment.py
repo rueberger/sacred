@@ -302,3 +302,15 @@ def test_info_kwarg_updates_info(ex):
 
     run = ex.run(info={'bar': 'baz'})
     assert 'bar' in run.info
+
+
+def test_info_kwargs_default_behavior(ex):
+    """ Tests the default behavior of Experiment.create_run when the info kwarg is not specified.
+    """
+
+    @ex.automain
+    def foo(_run):
+        _run.info['bar'] = 'baz'
+
+    run = ex.run()
+    assert 'bar' in run.info
